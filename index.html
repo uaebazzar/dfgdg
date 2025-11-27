@@ -26,7 +26,7 @@
             min-height: 100vh;
         }
 
-        /* Ambient Background Glow (Original Green Theme) */
+        /* Ambient Background Glow (Green) */
         .glow-bg {
             position: fixed;
             top: 50%;
@@ -67,37 +67,40 @@
             line-height: 1.6;
         }
 
-        /* --- NEW BUTTON CODE (Uiverse.io by zjssun) --- */
+        /* --- BUTTON BASE STYLES --- */
         button {
-            padding: 15px 35px; /* Slightly increased padding for better scale */
+            padding: 15px 35px; 
             text-transform: uppercase;
             border-radius: 8px;
             font-size: 17px;
             font-weight: 500;
-            color: #ffffff80;
-            text-shadow: none;
-            background: transparent;
             cursor: pointer;
-            box-shadow: transparent;
-            border: 1px solid #ffffff80;
             transition: 0.5s ease;
             user-select: none;
-            /* Added margin for centering on the page */
             margin: 20px 0; 
+            outline: none; /* Ensure no default browser focus ring */
         }
 
-        #btn:hover,
-        #btn:focus {
-            color: #ffffff;
-            background: #008cff; /* Blue background */
+        /* --- #btn: PERMANENT HOVER/GLOW STATE --- */
+        #btn {
+            /* Inherited from original button styles */
+            background: #008cff; /* Permanent Blue background */
             border: 1px solid #008cff;
-            /* White text glow */
+            color: #ffffff; /* Permanent White text */
+            
+            /* Permanent Glow Effects (from original :hover rule) */
             text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-            /* Blue button glow */
             box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
               0 0 100px #008cff;
-            /* Added transform for subtle 3D lift */
-            transform: translateY(-2px);
+              
+            /* Subtle lift for persistent 'active' look */
+            transform: translateY(-2px); 
+        }
+
+        /* Remove the hover rules as they are now the default state */
+        /* You can still add a new :hover rule for a slight change if desired */
+        #btn:hover {
+            opacity: 0.9; /* Just a slight dim on hover */
         }
 
         /* --- UTILS --- */
